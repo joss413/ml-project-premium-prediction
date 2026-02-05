@@ -1,55 +1,69 @@
-# 🏥 Health Insurance Premium Prediction System( Regression)
+# 🏥 Health Insurance Premium Prediction System (Regression)
+
+![Streamlit](https://img.shields.io/badge/App-Streamlit-FF4B4B?style=for-the-badge)
+![ML](https://img.shields.io/badge/ML-XGBoost%2BRidge-FF6B00?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge)
 
 ## 📋 Project Overview
-A production-ready machine learning system that accurately predicts health insurance premiums using an innovative age-based segmentation strategy. Features dual specialized models with exceptional accuracy and a professional Streamlit web interface.
+A production-ready machine learning system that accurately predicts health insurance premiums using an **age-based segmentation strategy**.  
+The system leverages **two specialized regression models** to capture distinct risk patterns across age groups and delivers real-time predictions through a professional **Streamlit web interface**.
 
-https://img.shields.io/badge/App-Streamlit-FF4B4B?style=for-the-badge
-https://img.shields.io/badge/ML-XGBoost%252BRidge-FF6B00?style=for-the-badge
-https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge
+This project demonstrates how **domain-aware model design** can significantly improve regression accuracy in real-world healthcare pricing problems.
+
+---
 
 ## 🚀 Live Application
 
-<img src="images/health_insurance_cost_predictor_layout.png" alt="health_insurance_cost_predictor_layout" width="400">
-🔗 Try the live app: Streamlit Cloud Deployment ([Add your link here](https://health-insurance-cost-prediction-pro.streamlit.app/))
+<img src="images/health_insurance_cost_predictor_layout.png" alt="Health Insurance Cost Predictor Layout" width="400">
+
+🔗 **Try the live app:**  
+[Health Insurance Cost Predictor](https://health-insurance-cost-prediction-pro.streamlit.app/)
+
+---
 
 ## 📊 Model Performance
 
-1️⃣ Young Group (≤25 years)
+### 1️⃣ Young Group (≤ 25 years)
+- **Model:** Ridge Regression  
+- **R² Score:** 0.9887  
+- **RMSE:** 292.78  
+- **Most Important Features:** Insurance Plan, Genetic Risk  
 
-- Model: Ridge Regression
-- R² Score: 0.9887
-- RMSE: 292.78
-- Best Features: Insurance Plan, Genetic Risk
+### 2️⃣ Adult Group (> 25 years)
+- **Model:** XGBoost Regressor  
+- **R² Score:** 0.9935  
+- **RMSE:** 1717.70  
+- **Most Important Features:** Insurance Plan, Age, Medical Risk  
 
-2️⃣ Adult Group (>25 years)
-
-- Model: XGBoost Regressor
-- R² Score: 0.9935
-- RMSE: 1717.70
-- Best Features: Insurance Plan, Age, Medical Risk
-
-
+---
 
 ## 📈 Feature Importance
 
-1️⃣ Young Group Feature Impact
-<img src="images/Healthcare_premium_prediction_young_with_gr.png" alt="Healthcare_premium_prediction_young_with_gr" width="400">
-Insurance plan and genetic risk are most influential for young individuals
+### 1️⃣ Young Group Feature Impact
+<img src="images/Healthcare_premium_prediction_young_with_gr.png" alt="Young Group Feature Importance" width="400">
 
-2️⃣ Adult Group Feature Impact
-<img src="images/Healthcare_premium_prediction_rest_with_gr.png" alt="Healthcare_premium_prediction_young_with_gr" width="400">
-Insurance plan, age, and medical risk drive premiums for adults
+Insurance plan and genetic risk are the most influential factors for younger individuals.
 
+### 2️⃣ Adult Group Feature Impact
+<img src="images/Healthcare_premium_prediction_rest_with_gr.png" alt="Adult Group Feature Importance" width="400">
+
+Insurance plan, age, and medical risk dominate premium estimation for adults.
+
+---
 
 ## 📊 Error Analysis
 
-1️⃣ Young Group Error Distribution
-<img src="images/Healthcare_premium_prediction_young_with_gr_diff.png" alt="Healthcare_premium_prediction_young_with_gr_diff" width="400">
-95% predictions within ±15% error margin
+### 1️⃣ Young Group Error Distribution
+<img src="images/Healthcare_premium_prediction_young_with_gr_diff.png" alt="Young Group Error Distribution" width="400">
 
-2️⃣  Adult Group Error Distribution
-<img src="images/Healthcare_premium_prediction_rest_with_gr_diff.png" alt="Healthcare_premium_prediction_young_with_gr_diff" width="400">
-90% predictions within ±20% error margin
+- 95% of predictions fall within **±15% error margin**
+
+### 2️⃣ Adult Group Error Distribution
+<img src="images/Healthcare_premium_prediction_rest_with_gr_diff.png" alt="Adult Group Error Distribution" width="400">
+
+- 90% of predictions fall within **±20% error margin**
+
+---
 
 ## ⚙️ Installation
 
@@ -75,11 +89,25 @@ streamlit run main.py
 ## 📁 Project Structure
 
 health-insurance-predictor/
-├── main.py                 # Streamlit app
-├── prediction_helper.py    # ML prediction engine
-├── artifacts/              # Trained models
-├── images/                 # sample pictures
-└── requirements.txt        # Dependencies
+│
+├── app/
+│   └── main.py                 # Streamlit application
+│
+├── src/
+│   └── prediction_helper.py    # ML prediction logic
+│
+├── artifacts/
+│   ├── models/                 # Trained ML models
+│   └── encoders/               # Scalers / encoders (if any)
+│
+├── images/
+│   └── screenshots/            # UI & result images
+│
+├── data/                       # (Optional) sample or test data
+│
+├── requirements.txt            # Project dependencies
+├── README.md                   # Project documentation
+└── .gitignore
 
 👨‍💻 Author
 
