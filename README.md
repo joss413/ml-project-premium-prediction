@@ -86,28 +86,7 @@ streamlit run main.py
 - Medical Risk Scoring: Intelligent disease weight calculation
 - Real-time Predictions: Instant premium estimates in ₹
 
-## 📁 Project Structure
 
-health-insurance-predictor/
-│
-├── app/
-│   └── main.py                 # Streamlit application
-│
-├── src/
-│   └── prediction_helper.py    # ML prediction logic
-│
-├── artifacts/
-│   ├── models/                 # Trained ML models
-│   └── encoders/               # Scalers / encoders (if any)
-│
-├── images/
-│   └── screenshots/            # UI & result images
-│
-├── data/                       # (Optional) sample or test data
-│
-├── requirements.txt            # Project dependencies
-├── README.md                   # Project documentation
-└── .gitignore
 
 👨‍💻 Author
 
