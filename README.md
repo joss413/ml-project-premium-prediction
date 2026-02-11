@@ -91,20 +91,16 @@ streamlit run main.py
 ```bash
 health-insurance-predictor/
 │
-├── app/
-│   └── main.py                 # Streamlit application
-│
-├── src/
-│   └── prediction_helper.py    # ML prediction logic
+├──  main.py                 # Streamlit application
+│──  prediction_helper.py    # ML prediction logic
+│   
 │
 ├── artifacts/
 │   ├── models/                 # Trained ML models
-│   └── encoders/               # Scalers / encoders (if any)
 │
 ├── images/
 │   └── screenshots/            # UI & result images
-│
-├── data/                       # (Optional) sample or test data
+
 │
 ├── requirements.txt            # Project dependencies
 ├── README.md                   # Project documentation
